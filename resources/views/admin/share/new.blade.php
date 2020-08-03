@@ -46,6 +46,10 @@
                     <input type="number" name = "amount_contributed" id = "amount_contributed" class="form-control" required>
                   </div>
                   <div class="form-group">
+                    <label for="date_paid">Date Paid:</label>
+                    <input type="date" name = "date_paid" id = "date_paid" class="form-control" required >
+                  </div>
+                  <div class="form-group">
                     <label for="id_no">ID No:</label>
                     <input type="number" name = "id_no" id = "id_no" class="form-control" required>
                   </div>
