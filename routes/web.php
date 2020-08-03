@@ -58,7 +58,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/dailyreport/{id}/edit','DailyreportController@edit')->name('dailyreport.edit');
     Route::get('/dailyreport/{id}/delete','DailyreportController@destroy')->name('dailyreport.destroy');
     Route::get('/dailyreport/new','DailyreportController@create')->name('new');
-    Route::post('save','DailyreportController@store')->name('save');
+    Route::post('savereport','DailyreportController@store')->name('save');
     Route::post('update','DailyreportController@update')->name('users.update');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Employees Routes---------------------------------------
