@@ -77,13 +77,21 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::post('new','MedicationController@store')->name('saveadmin');
     Route::post('update','MedicationController@update')->name('medication.update');
     //---------------------------------------End------------------------------------------------------------
-    //---------------------------------------Daily Report Routes---------------------------------------
-    Route::get('/share/share','ShareholderController@index')->name('dailyreport')->middleware('guard.verified:admin,admin.verification.notice');
-    Route::get('/share/{id}/edit','ShareholderController@edit')->name('dailyreport.edit');
-    Route::get('/share/{id}/delete','ShareholderController@destroy')->name('dailyreport.destroy');
+    //---------------------------------------Share Holders Routes---------------------------------------
+    Route::get('/share/share','ShareholderController@index')->name('share')->middleware('guard.verified:admin,admin.verification.notice');
+    Route::get('/share/{id}/edit','ShareholderController@edit')->name('share.edit');
+    Route::get('/share/{id}/delete','ShareholderController@destroy')->name('share.destroy');
     Route::get('/share/new','ShareholderController@create')->name('new');
     Route::post('saveshareholder','ShareholderController@store')->name('save');
     Route::post('update','ShareholderController@update')->name('users.update');
+    //---------------------------------------End------------------------------------------------------------
+    //---------------------------------------Cost Overhead Routes---------------------------------------
+    Route::get('/coh/costoverhead','CohController@index')->name('costoverhead')->middleware('guard.verified:admin,admin.verification.notice');
+    Route::get('/coh/{id}/edit','CohController@edit')->name('coh.edit');
+    Route::get('/coh/{id}/delete','CohController@destroy')->name('coh.destroy');
+    Route::get('/coh/new','CohController@create')->name('new');
+    Route::post('savecoh','CohController@store')->name('save');
+    Route::post('update','CohController@update')->name('users.update');
     //---------------------------------------End------------------------------------------------------------
 
 });
