@@ -18,7 +18,7 @@
             @endif
             <div class="row">
                 <div class="col-lg-12">
-                <a href="{{ url('admin/medication/medication') }}" class = "btn btn-danger">Report</a></h1>
+                <a href="{{ url('admin/medication/medication') }}" class = "btn btn-info">Report</a></h1>
                 </div>
             </div>
             <hr>

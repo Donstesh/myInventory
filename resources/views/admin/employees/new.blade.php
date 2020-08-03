@@ -24,7 +24,7 @@
             <hr>
             <div class="row">
               <div class="col-sm-8 offset-sm-2">
-                <form action="{{ action('Admin\EmployeesController@store') }}" method = "post">
+                <form action="{{ url('admin/save') }}" method = "post">
                   @csrf  
                   @method('POST')
                   <div class="form-group">

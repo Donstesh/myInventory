@@ -7,7 +7,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">System Administrators</h1>
+                    <h1 class="page-header">Employees</h1>
                 </div>
             </div>
             <div class="row">
@@ -32,23 +32,23 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($emp as $emp)
+                        @foreach($emps as $emp)
                             <tr class = "text-center">
-                              <td>{{ $drpt->id }}</td>
-                              <td>{{ $drpt->p_photo }}</td>
-                              <td>{{ $drpt->name }}</td>
-                              <td>{{ $drpt->email }}</td>
-                              <td>{{ $drpt->id_no }}</td>
-                              <td>{{ $drpt->designation }}</td>
-                              <td>{{ $drpt->salary }}</td>
-                              <td>{{ $drpt->additional_info }}</td>
+                              <td>{{ $emp->id }}</td>
+                              <td>{{ $emp->p_photo }}</td>
+                              <td>{{ $emp->name }}</td>
+                              <td>{{ $emp->email }}</td>
+                              <td>{{ $emp->id_no }}</td>
+                              <td>{{ $emp->designation }}</td>
+                              <td>{{ $emp->salary }}</td>
+                              <td>{{ $emp->additional_info }}</td>
                               <td><a href="{{route('admin.admins.edit',['id'=>$emp->id])}}" class = "btn btn-info">Edit</a></td>
                               <td><a href="{{route('admin.admins.destroy',['id'=>$emp->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $emp->links() }}
+                    {{ $emps->links() }}
             </div>
 
         </div>

@@ -6,7 +6,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Create New User</h1>
+                    <h1 class="page-header">New Daily Report</h1>
                 </div>
             </div>
             @if(!empty($successMsg))
@@ -24,11 +24,11 @@
             <hr>
             <div class="row">
               <div class="col-sm-8 offset-sm-2">
-                <form action="{{ action('Admin\DailyreportController@store') }}" method = "post">
+              <form method="POST" action="{{ url('admin/save') }}" >
                   @csrf  
                   @method('POST')
                   <div class="form-group">
-                    <label for='date'>Date:</label>
+                    <label for="date">Date:</label>
                     <input type="date" name = "date" id = "date" class="form-control" required >
                   </div>
                   <div class="form-group">

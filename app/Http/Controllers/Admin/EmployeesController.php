@@ -15,8 +15,8 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $emp = User::paginate(5);
-        return view('admin.employees.employee',['emp'=>$emp]);
+        $emps = User::paginate(5);
+        return view('admin.employees.employee',['emps'=>$emps]);
     }
 
     /**
@@ -37,16 +37,16 @@ class EmployeesController extends Controller
      */
     public function store(Request $request)
     {
-        $emp = new User();
-        $emp->p_photo = $request->input('p_photo');
-        $emp->name = $request->input('name');
-        $emp->email = $request->input('email');
-        $emp->password = $request->input('password');
-        $emp->id_no = $request->input('id_no');
-        $emp->designation = $request->input('designation');
-        $emp->salary = $request->input('salary');
-        $emp->additional_info = $request->input('additional_info');
-        $emp->save(); //persist the data
+        $emps = new User();
+        $emps->p_photo = $request->input('p_photo');
+        $emps->name = $request->input('name');
+        $emps->email = $request->input('email');
+        $emps->password = $request->input('password');
+        $emps->id_no = $request->input('id_no');
+        $emps->designation = $request->input('designation');
+        $emps->salary = $request->input('salary');
+        $emps->additional_info = $request->input('additional_info');
+        $emps->save(); //persist the data
         return view('admin.employees.new')->with('successMsg','Employee Added Successfully');
     }
     /**

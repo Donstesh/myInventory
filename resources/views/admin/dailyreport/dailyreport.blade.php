@@ -7,12 +7,12 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">System Administrators</h1>
+                    <h1 class="page-header">Daily Reports</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                <a href="{{route('admin.newadmin')}}" class = "btn btn-success">Add New Admin</a></h1>
+                <a href="{{ url('admin/dailyreport/new') }}" class = "btn btn-success">Add New Report</a></h1>
                 </div>
             </div>
             <hr>
