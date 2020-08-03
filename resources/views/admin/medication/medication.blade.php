@@ -22,7 +22,6 @@
                     <table class="table table-sm table-bordered table-hover table-striped">
                         <thead>
                         <tr>
-                          <th>Medictaion ID</th>
                           <th>Medictaion Date</th>
                           <th>Vaccine</th>
                           <th>Mode</th>
@@ -34,7 +33,6 @@
                         <tbody>
                         @foreach($medics as $medic)
                             <tr class = "text-center">
-                              <td>{{ $medic->id }}</td>
                               <td>{{ $medic->date }}</td>
                               <td>{{ $medic->vaccine }}</td>
                               <td>{{ $medic->mode_of_adminstration }}</td>

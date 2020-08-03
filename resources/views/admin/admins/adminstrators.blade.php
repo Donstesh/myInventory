@@ -22,7 +22,6 @@
                     <table class="table table-sm table-bordered table-hover table-striped">
                         <thead>
                         <tr>
-                          <th>ID</th>
                           <th>Name</th>
                           <th>email</th>
                           <th>Join Date</th>
@@ -33,7 +32,6 @@
                         <tbody>
                         @foreach($admins as $admin)
                             <tr class = "text-center">
-                              <td>{{ $admin->id }}</td>
                               <td>{{ $admin->name }}</td>
                               <td>{{ $admin->email }}</td>
                               <td>{{ $admin->created_at }}</td>

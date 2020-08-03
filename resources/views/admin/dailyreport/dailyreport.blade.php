@@ -22,7 +22,6 @@
                     <table class="table table-sm table-bordered table-hover table-striped">
                         <thead>
                         <tr>
-                          <th>Report ID</th>
                           <th>Date</th>
                           <th>Time</th>
                           <th>Task</th>
@@ -34,7 +33,6 @@
                         <tbody>
                         @foreach($drpts as $drpt)
                             <tr class = "text-center">
-                              <td>{{ $drpt->id }}</td>
                               <td>{{ $drpt->date }}</td>
                               <td>{{ $drpt->time }}</td>
                               <td>{{ $drpt->task }}</td>
