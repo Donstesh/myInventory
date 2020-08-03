@@ -77,6 +77,14 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::post('new','MedicationController@store')->name('saveadmin');
     Route::post('update','MedicationController@update')->name('medication.update');
     //---------------------------------------End------------------------------------------------------------
+    //---------------------------------------Daily Report Routes---------------------------------------
+    Route::get('/share/share','ShareholderController@index')->name('dailyreport')->middleware('guard.verified:admin,admin.verification.notice');
+    Route::get('/share/{id}/edit','ShareholderController@edit')->name('dailyreport.edit');
+    Route::get('/share/{id}/delete','ShareholderController@destroy')->name('dailyreport.destroy');
+    Route::get('/share/new','ShareholderController@create')->name('new');
+    Route::post('saveshareholder','ShareholderController@store')->name('save');
+    Route::post('update','ShareholderController@update')->name('users.update');
+    //---------------------------------------End------------------------------------------------------------
 
 });
 
