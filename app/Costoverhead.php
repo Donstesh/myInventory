@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Costoverhead extends Model
 {
-    //
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'date', 'service', 'category', 'amount', 'status'
+    ];
 }
