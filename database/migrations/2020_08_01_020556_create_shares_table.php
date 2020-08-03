@@ -16,6 +16,7 @@ class CreateSharesTable extends Migration
         Schema::create('shares', function (Blueprint $table) {
             $table->id();
             $table->date('date_joined');
+            $table->string('name');
             $table->string('detail');
             $table->integer('amount_contributed');
             $table->date('date_paid');
