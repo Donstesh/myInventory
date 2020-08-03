@@ -9,12 +9,12 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">System Administrators</h1>
+                    <h1 class="page-header">Medication Report</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                <a href="{{route('admin.newadmin')}}" class = "btn btn-success">Add New Admin</a></h1>
+                <a href="{{ url('admin/medication/new') }}" class = "btn btn-success">Add New Admin</a></h1>
                 </div>
             </div>
             <hr>
@@ -40,8 +40,8 @@
                               <td>{{ $medic->mode_of_adminstration }}</td>
                               <td>{{ $medic->period }}</td>
                               <td>{{ $medic->remarks }}</td>
-                              <td><a href="{{route('admin.admins.edit',['id'=>$medic->id])}}" class = "btn btn-info">Edit</a></td>
-                              <td><a href="{{route('admin.admins.destroy',['id'=>$medic->id])}}" class = "btn btn-danger">Delete</a></td>
+                              <td><a href="{{route('admin.medication.edit',['id'=>$medic->id])}}" class = "btn btn-info">Edit</a></td>
+                              <td><a href="{{route('admin.medication.destroy',['id'=>$medic->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>
                         @endforeach
                         </tbody>

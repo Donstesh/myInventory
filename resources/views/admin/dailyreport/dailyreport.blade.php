@@ -40,8 +40,8 @@
                               <td>{{ $drpt->task }}</td>
                               <td>{{ $drpt->problem_encountered }}</td>
                               <td>{{ $drpt->report }}</td>
-                              <td><a href="{{route('admin.admins.edit',['id'=>$drpt->id])}}" class = "btn btn-info">Edit</a></td>
-                              <td><a href="{{route('admin.admins.destroy',['id'=>$drpt->id])}}" class = "btn btn-danger">Delete</a></td>
+                              <td><a href="{{route('admin.dailyreport.edit',['id'=>$drpt->id])}}" class = "btn btn-info">Edit</a></td>
+                              <td><a href="{{route('admin.dailyreport.destroy',['id'=>$drpt->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>
                         @endforeach
                         </tbody>

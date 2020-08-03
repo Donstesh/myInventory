@@ -91,7 +91,7 @@ class MedicationController extends Controller
     public function destroy($id)
     {
         $drpt = Medication::findOrFail($id);
-        $drpt->delete(1);
-        return redirect()->route('admin.medication.medication')->with('errormsg', 'Record Deleted Successfully');
+        $drpt->delete();
+        return back();
     }
 }

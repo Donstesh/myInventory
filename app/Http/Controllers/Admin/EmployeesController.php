@@ -93,6 +93,6 @@ class EmployeesController extends Controller
     {
         $emp = User::findOrFail($id);
         $emp->delete(1);
-        return redirect()->route('admin.dailyreport.dailyreport')->with('errormsg', 'Employee Deleted Successfully');
+        return back()->with('errormsg', 'Employee Deleted Successfully');
     }
 }

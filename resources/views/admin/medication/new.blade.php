@@ -8,7 +8,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Create New User</h1>
+                    <h1 class="page-header"> New Medication</h1>
                 </div>
             </div>
             @if(!empty($successMsg))

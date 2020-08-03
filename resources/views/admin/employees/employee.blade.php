@@ -44,8 +44,8 @@
                               <td>{{ $emp->designation }}</td>
                               <td>{{ $emp->salary }}</td>
                               <td>{{ $emp->additional_info }}</td>
-                              <td><a href="{{route('admin.admins.edit',['id'=>$emp->id])}}" class = "btn btn-info">Edit</a></td>
-                              <td><a href="{{route('admin.admins.destroy',['id'=>$emp->id])}}" class = "btn btn-danger">Delete</a></td>
+                              <td><a href="{{route('admin.employees.edit',['id'=>$emp->id])}}" class = "btn btn-info">Edit</a></td>
+                              <td><a href="{{route('admin.employees.destroy',['id'=>$emp->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>
                         @endforeach
                         </tbody>

@@ -94,6 +94,6 @@ class AdminController extends Controller
     {
         $admin = Admin::findOrFail($id);
         $admin->delete(1);
-        return redirect()->route('admin.admins.adminstrators')->with('errormsg', 'Admin Deleted Successfully');
+        return back()->with('errormsg', 'Admin Deleted Successfully');
     }
 }

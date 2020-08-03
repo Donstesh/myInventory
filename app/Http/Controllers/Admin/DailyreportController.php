@@ -91,6 +91,6 @@ class DailyreportController extends Controller
     {
         $drpt = Dailyeport::findOrFail($id);
         $drpt->delete(1);
-        return redirect()->route('admin.dailyreport.dailyreport')->with('errormsg', 'Record Deleted Successfully');
+        return back()->with('errormsg', 'Record Deleted Successfully');
     }
 }
