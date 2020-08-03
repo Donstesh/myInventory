@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
+<br>
+<br>
             <div id="page-wrapper">
                 <div class="container-fluid">
                     <div class="row">
