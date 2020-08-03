@@ -9,6 +9,7 @@ use App\Admin;
 use App\Dailyeport;
 use App\Medication;
 use App\Shares;
+use App\Costoverhead;
 use DB;
 
 class HomeController extends Controller
@@ -35,11 +36,13 @@ class HomeController extends Controller
         $drpt = Dailyeport::count();
         $medics = Medication::count();
         $shares = Shares::count();
+        $cohs = Costoverhead::count();
         return view('admin.home', ['employees' => $employees,
                                     'admins' => $admins,
                                     'drpt' => $drpt,
                                     'medics' => $medics,
-                                    'shares' => $shares,]);
+                                    'shares' => $shares,
+                                    'cohs' => $cohs,]);
         
     }
 }

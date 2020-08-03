@@ -95,7 +95,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{ url('admin/share/shares') }}">
+                                <a href="{{ url('admin/share/share') }}">
                                     <div class="panel-footer">
                                         <span class="pull-left">View Details</span>
                                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -136,12 +136,12 @@
                                         <i class="fas fa-coins fa-5x"></i>
                                         </div>
                                         <div class="col-xs-9 text-right">
-                                            <div class="huge">26</div>
+                                            <div class="huge">{{ $cohs }}</div>
                                             <div>Cost Overhead</div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="#">
+                                <a href="{{ url('admin/coh/costoverhead') }}">
                                     <div class="panel-footer">
                                         <span class="pull-left">View Details</span>
                                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

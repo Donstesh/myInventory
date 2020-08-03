@@ -86,10 +86,10 @@
                                 <a href="#"><i class="fas fa-users"></i> Shares<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="blank.html"><i class="fas fa-users"></i> New ShareHolder </a>
+                                        <a href="{{ url('admin/share/new') }}"><i class="fas fa-users"></i> New ShareHolder </a>
                                     </li>
                                     <li>
-                                        <a href="login.html"><i class="fas fa-print"></i> Report</a>
+                                        <a href="{{ url('admin/share/share') }}"><i class="fas fa-print"></i> Report</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->
@@ -110,10 +110,10 @@
                                 <a href="#"><i class="fas fa-coins"></i> Cost Overhead<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="blank.html"><i class="fas fa-plus"></i> New Cost Overhead </a>
+                                        <a href="{{ url('admin/coh/new') }}"><i class="fas fa-plus"></i> New Cost Overhead </a>
                                     </li>
                                     <li>
-                                        <a href="login.html"><i class="fas fa-print"></i> Report</a>
+                                        <a href="{{ url('admin/coh/costoverhead') }}"><i class="fas fa-print"></i> Report</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->
