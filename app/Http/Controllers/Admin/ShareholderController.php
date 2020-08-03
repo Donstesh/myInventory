@@ -42,12 +42,13 @@ class ShareholderController extends Controller
         $shares->name = $request->input('name');
         $shares->detail = $request->input('detail');
         $shares->amount_contributed = $request->input('amount_contributed');
+        $shares->date_paid = $request->input('date_paid');
         $shares->id_no = $request->input('id_no');
         $shares->phone_no = $request->input('phone_no');
         $shares->next_of_kin = $request->input('next_of_kin');
         $shares->mode_of_payment = $request->input('mode_of_payment');
         $shares->save(); //persist the data
-        return view('admin.dailyreport.new')->with('successMsg','Record Added Successfully');
+        return view('admin.share.new')->with('successMsg','Record Added Successfully');
     }
 
     /**

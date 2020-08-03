@@ -22,7 +22,7 @@ class CreateSharesTable extends Migration
             $table->date('date_paid');
             $table->integer('id_no');
             $table->integer('phone_no');
-            $table->integer('next_of_kin');
+            $table->string('next_of_kin');
             $table->string('mode_of_payment');
             $table->timestamps();
         });
