@@ -67,7 +67,8 @@ class MedicationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $medics = Medication::find($id);
+        return view('admin.medication.edit',['medics'=> $medics]);
     }
 
     /**
@@ -77,9 +78,18 @@ class MedicationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $medics = Medication::find($request->input('id'));
+        $medics->date = $request->input('date');
+        $medics->vaccine = $request->input('vaccine');
+        $medics->mode_of_adminstration = $request->input('mode_of_adminstration');
+        $medics->period = $request->input('period');
+        $medics->remarks = $request->input('remarks');
+        $medics->save($request->all()); //persist the data
+        //return back()->with('successMsg','Record Added Successfully');
+        $medics = Medication::paginate(5);
+        return view('admin.medication.medication',['medics'=>$medics])->with('successMsg','Record Updated Successfully');
     }
 
     /**
