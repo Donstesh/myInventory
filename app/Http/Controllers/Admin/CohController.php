@@ -44,7 +44,7 @@ class CohController extends Controller
         $cohs->amount = $request->input('amount');
         $cohs->status = $request->input('status');
         $cohs->save(); //persist the data
-        return view('admin.dailyreport.new')->with('successMsg','Record Added Successfully');
+        return view('admin.coh.new')->with('successMsg','Record Added Successfully');
     }
 
     /**
