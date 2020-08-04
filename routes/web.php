@@ -59,7 +59,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/dailyreport/{id}/delete','DailyreportController@destroy')->name('dailyreport.destroy');
     Route::get('/dailyreport/new','DailyreportController@create')->name('new');
     Route::post('savereport','DailyreportController@store')->name('save');
-    Route::post('update','DailyreportController@update')->name('users.update');
+    Route::post('updaterpt','DailyreportController@update')->name('admin.updaterpt');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Employees Routes---------------------------------------
     Route::get('/employees/employee','EmployeesController@index')->name('employees')->middleware('guard.verified:admin,admin.verification.notice');
@@ -67,7 +67,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/employees/{id}/delete','EmployeesController@destroy')->name('employees.destroy');
     Route::get('/employees/new','EmployeesController@create')->name('new');
     Route::post('save','EmployeesController@store')->name('save');
-    Route::post('update','EmployeesController@update')->name('employees.update');
+    Route::post('updateemp','EmployeesController@update')->name('employees.update');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Medication Routes---------------------------------------
     Route::get('/medication/medication','MedicationController@index')->name('medication')->middleware('guard.verified:admin,admin.verification.notice');
@@ -75,7 +75,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/medication/{id}/delete','MedicationController@destroy')->name('medication.destroy');
     Route::get('/medication/new','MedicationController@create')->name('new');
     Route::post('new','MedicationController@store')->name('saveadmin');
-    Route::post('update','MedicationController@update')->name('medication.update');
+    Route::post('updatemed','MedicationController@update')->name('admin.updatemed');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Share Holders Routes---------------------------------------
     Route::get('/share/share','ShareholderController@index')->name('share')->middleware('guard.verified:admin,admin.verification.notice');
