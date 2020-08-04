@@ -14,7 +14,7 @@ class ShareholderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
         $shares = Shares::paginate(5);
         return view('admin.share.shares',['shares'=>$shares]);
     }
@@ -70,7 +70,8 @@ class ShareholderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shares = Shares::find($id);
+        return view('admin.share.edit',['shares'=> $shares]);
     }
 
     /**
@@ -80,9 +81,22 @@ class ShareholderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $shares = Shares::find($request->input('id'));
+        $shares->date_joined = $request->input('date_joined');
+        $shares->name = $request->input('name');
+        $shares->detail = $request->input('detail');
+        $shares->amount_contributed = $request->input('amount_contributed');
+        $shares->date_paid = $request->input('date_paid');
+        $shares->id_no = $request->input('id_no');
+        $shares->phone_no = $request->input('phone_no');
+        $shares->next_of_kin = $request->input('next_of_kin');
+        $shares->mode_of_payment = $request->input('mode_of_payment');;
+        $shares->save($request->all()); //persist the data
+        //return back()->with('successMsg','Record Added Successfully');
+        $shares = Shares::paginate(5);
+        return view('admin.share.shares',['shares'=>$shares])->with('successMsg','Record Updated Successfully');
     }
 
     /**
