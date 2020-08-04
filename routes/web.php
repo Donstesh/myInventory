@@ -98,7 +98,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/req/{id}/edit','RequisitionController@edit')->name('req.edit');
     Route::get('/req/{id}/delete','RequisitionController@destroy')->name('req.destroy');
     Route::get('/req/new','RequisitionController@create')->name('new');
-    Route::post('savereq','RequisitionController@store')->name('save');
+    Route::post('savereq','RequisitionController@store')->name('savereq');
     Route::post('update','RequisitionController@update')->name('req.update');
     //---------------------------------------End------------------------------------------------------------
 
