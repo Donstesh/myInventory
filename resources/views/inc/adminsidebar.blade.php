@@ -74,10 +74,10 @@
                                 <a href="#"><i class="fas fa-file-invoice"></i> Requisition<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="subscriptions"><i class="fas fa-plus"></i> New Requisition </a>
+                                        <a href="{{ url('admin/req/new') }}"><i class="fas fa-plus"></i> New Requisition </a>
                                     </li>
                                     <li>
-                                        <a href="buttons.html"><i class="fas fa-print"></i> Report</a>
+                                        <a href="{{ url('admin/req/requisition') }}"><i class="fas fa-print"></i> Report</a>
                                     </li> 
                                 </ul>
                                 <!-- /.nav-second-level -->

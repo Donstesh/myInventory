@@ -67,12 +67,12 @@
                                         <i class="fas fa-file-invoice fa-5x"></i>
                                         </div>
                                         <div class="col-xs-9 text-right">
-                                            <div class="huge">12</div>
+                                            <div class="huge">{{ $reqs }}</div>
                                             <div>Requisition</div>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="">
+                                <a href="{{ url('admin/req/requisition') }}">
                                     <div class="panel-footer">
                                         <span class="pull-left">View Details</span>
                                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
