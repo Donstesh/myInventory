@@ -50,7 +50,7 @@
                     <input type="text" name = "status" id = "status" class="form-control" required value = "{{$cohs->status}}">
                   </div>
                   <input type="hidden" name="id" value = "{{$cohs->id}}">
-                  <button type = "submit" class = "btn btn-success">Save</button>
+                  <button type = "submit" class = "btn btn-success">Update</button>
                 </form>
               </div>
             </div>
