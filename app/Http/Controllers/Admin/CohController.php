@@ -66,7 +66,8 @@ class CohController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cohs = Costoverhead::find($id);
+        return view('admin.coh.edit',['cohs'=> $cohs]);
     }
 
     /**
@@ -76,9 +77,18 @@ class CohController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        //Retrieve the employee and update
+        $cohs = Costoverhead::find($request->input('id'));
+        $cohs->date = $request->input('date');
+        $cohs->service = $request->input('service');
+        $cohs->category = $request->input('category');
+        $cohs->amount = $request->input('amount');
+        $cohs->status = $request->input('status');
+        $cohs->save($request->all()); //persist the data
+        $cohs = Costoverhead::paginate(5);
+        return view('admin.coh.costoverhead',['cohs'=>$cohs])->with('successMsg','Record Updated Successfully');
     }
 
     /**

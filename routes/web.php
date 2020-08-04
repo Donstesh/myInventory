@@ -91,7 +91,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/coh/{id}/delete','CohController@destroy')->name('coh.destroy');
     Route::get('/coh/new','CohController@create')->name('new');
     Route::post('savecoh','CohController@store')->name('save');
-    Route::post('update','CohController@update')->name('users.update');
+    Route::post('updatecoh','CohController@update')->name('admin.updatecoh');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Cost Overhead Routes---------------------------------------
     Route::get('/req/requisition','RequisitionController@index')->name('requisition')->middleware('guard.verified:admin,admin.verification.notice');
