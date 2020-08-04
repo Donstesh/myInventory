@@ -50,7 +50,7 @@
                     <input type="text" name = "remarks" id = "remarks" class="form-control" required value = "{{$medics->remarks}}">
                   </div>
                   <input type="hidden" name="id" value = "{{$medics->id}}">
-                  <button type = "submit" class = "btn btn-success">Save</button>
+                  <button type = "submit" class = "btn btn-success">Update</button>
                 </form>
               </div>
             </div>
