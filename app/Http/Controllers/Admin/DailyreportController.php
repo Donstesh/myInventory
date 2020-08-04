@@ -66,7 +66,8 @@ class DailyreportController extends Controller
      */
     public function edit($id)
     {
-        //
+        $drpts = Dailyeport::find($id);
+        return view('admin.dailyreport.edit',['drpts'=> $drpts]);
     }
 
     /**
@@ -76,9 +77,18 @@ class DailyreportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $drpt = Dailyeport::find($request->input('id'));
+        $drpt->date = $request->input('date');
+        $drpt->time = $request->input('time');
+        $drpt->task = $request->input('task');
+        $drpt->problem_encountered = $request->input('problem_encountered');
+        $drpt->report = $request->input('report');
+        $drpt->save($request->all()); //persist the data
+        //return back()->with('successMsg','Record Added Successfully');
+        $drpts = Dailyeport::paginate(5);
+        return view('admin.dailyreport.dailyreport',['drpts'=>$drpts])->with('successMsg','Record Updated Successfully');
     }
 
     /**
