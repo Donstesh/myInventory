@@ -69,7 +69,8 @@ class EmployeesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $emps = User::find($id);
+        return view('admin.employees.edit',['emps'=> $emps]);
     }
 
     /**
@@ -79,9 +80,21 @@ class EmployeesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $emps = User::find($request->input('id'));
+        $emps->p_photo = $request->input('p_photo');
+        $emps->name = $request->input('name');
+        $emps->email = $request->input('email');
+        $emps->password = bcrypt($request->input('password'));
+        $emps->id_no = $request->input('id_no');
+        $emps->designation = $request->input('designation');
+        $emps->salary = $request->input('salary');
+        $emps->additional_info = $request->input('additional_info');
+        $emps->save($request->all()); //persist the data
+        //return back()->with('successMsg','Record Added Successfully');
+        $emps = User::paginate(5);
+        return view('admin.employees.employee',['emps'=>$emps])->with('successMsg','Record Updated Successfully');
     }
 
     /**
