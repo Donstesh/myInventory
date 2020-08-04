@@ -83,7 +83,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/share/{id}/delete','ShareholderController@destroy')->name('share.destroy');
     Route::get('/share/new','ShareholderController@create')->name('new');
     Route::post('saveshareholder','ShareholderController@store')->name('save');
-    Route::post('update','ShareholderController@update')->name('users.update');
+    Route::post('updateshareholder','ShareholderController@update')->name('admin.updateshareholder');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Cost Overhead Routes---------------------------------------
     Route::get('/coh/costoverhead','CohController@index')->name('costoverhead')->middleware('guard.verified:admin,admin.verification.notice');
