@@ -17,6 +17,7 @@ class AdminSeeder extends Seeder
         $admin->email = 'stephen@myinventory.com';
         $admin->email_verified_at = '2020-02-28 14:28:34';
         $admin->password = Hash::make('Stesh28*');
+        $admin->by = 'Stephen Sienko';
         $admin->save();
 
         $admin = new Admin;
@@ -24,6 +25,7 @@ class AdminSeeder extends Seeder
         $admin->email = 'brian@myinventory.com';
         $admin->email_verified_at = '2020-02-28 14:28:34';
         $admin->password = Hash::make('Brian12*');
+        $admin->by = 'Stephen Sienko';
         $admin->save();
 
         $admin = new Admin;
@@ -31,6 +33,7 @@ class AdminSeeder extends Seeder
         $admin->email = 'leonard@myinventory.com';
         $admin->email_verified_at = '2020-02-28 14:28:34';
         $admin->password = Hash::make('Leo1234*');
+        $admin->by = 'Stephen Sienko';
         $admin->save();
     }
 }

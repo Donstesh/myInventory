@@ -12,6 +12,6 @@ class Costoverhead extends Model
      * @var array
      */
     protected $fillable = [
-        'date', 'service', 'category', 'amount', 'status'
+        'date', 'service', 'category', 'amount', 'status', 'by',
     ];
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 use App\Shares;
 
 class ShareholderController extends Controller
@@ -47,6 +48,7 @@ class ShareholderController extends Controller
         $shares->phone_no = $request->input('phone_no');
         $shares->next_of_kin = $request->input('next_of_kin');
         $shares->mode_of_payment = $request->input('mode_of_payment');
+        $shares->by = Auth::guard('admin')->user()->name;
         $shares->save(); //persist the data
         return view('admin.share.new')->with('successMsg','Record Added Successfully');
     }
@@ -92,7 +94,8 @@ class ShareholderController extends Controller
         $shares->id_no = $request->input('id_no');
         $shares->phone_no = $request->input('phone_no');
         $shares->next_of_kin = $request->input('next_of_kin');
-        $shares->mode_of_payment = $request->input('mode_of_payment');;
+        $shares->mode_of_payment = $request->input('mode_of_payment');
+        $shares->by = Auth::guard('admin')->user()->name;
         $shares->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
         $shares = Shares::paginate(5);

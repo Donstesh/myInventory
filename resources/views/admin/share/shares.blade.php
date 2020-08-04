@@ -30,6 +30,7 @@
                           <th>Phone No.</th>
                           <th>Next Of kin</th>
                           <th>Mode Of Payment</th>
+                          <th>Added By</th>
                           <th colspan = "2">Actions</th>
                         </tr>
                         </thead>
@@ -44,6 +45,7 @@
                               <td>{{ $share->phone_no }}</td>
                               <td>{{ $share->next_of_kin }}</td>
                               <td>{{ $share->mode_of_payment }}</td>
+                              <td>{{ $share->by }}</td>
                               <td><a href="{{route('admin.share.edit',['id'=>$share->id])}}" class = "btn btn-info">Edit</a></td>
                               <td><a href="{{route('admin.share.destroy',['id'=>$share->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>

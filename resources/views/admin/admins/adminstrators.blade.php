@@ -26,6 +26,7 @@
                           <th>email</th>
                           <th>Join Date</th>
                           <th>Verified At.</th>
+                          <th>Added By</th>
                           <th colspan = "2">Actions</th>
                         </tr>
                         </thead>
@@ -36,6 +37,7 @@
                               <td>{{ $admin->email }}</td>
                               <td>{{ $admin->created_at }}</td>
                               <td>{{ $admin->email_verified_at }}</td>
+                              <td>{{ $admin->by }}</td>
                               <td><a href="{{route('admin.admins.edit',['id'=>$admin->id])}}" class = "btn btn-info">Edit</a></td>
                               <td><a href="{{route('admin.admins.destroy',['id'=>$admin->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>

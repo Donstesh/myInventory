@@ -25,7 +25,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body>
+    <body onload="loadColor()">
       <!-- Top Nav Bar -->
       <div id="wrapper">
       @include('inc.adminsidebar')
@@ -55,6 +55,8 @@
         </div>
     @endif
 
+    
+
     <script>
         //close the alert after 3 seconds.
         $(document).ready(function(){
@@ -74,7 +76,6 @@
 
 <!-- Morris Charts JavaScript -->
 <script src="{{ URL::asset('assets/admin/js/raphael.min.js') }}"></script>
-
 
 <!-- Custom Theme JavaScript -->
 <script src="{{ URL::asset('assets/admin/js/startmin.js') }}"></script>

@@ -42,6 +42,7 @@ class AdminController extends Controller
         $admin->email = $request->input('email');
         $admin->email_verified_at = $request->input('email_verified_at');
         $admin->password = bcrypt($request->input('password'));
+        $admin->by = Auth::guard('admin')->user()->name;
         $admin->save(); //persist the data
         return view('admin.admins.newadmin')->with('successMsg','Admin Added Successfully');
     }
@@ -80,6 +81,7 @@ class AdminController extends Controller
         $admin = Admin::find($request->input('id'));
         $admin->name = $request->input('name');
         $admin->email = $request->input('email');
+        $admin->by = Auth::guard('admin')->user()->name;
         $admin->save();
         return back()->with('status','Admin Info Updated Successfully');
     }

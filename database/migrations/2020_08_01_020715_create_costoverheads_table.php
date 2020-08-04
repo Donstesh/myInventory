@@ -20,6 +20,7 @@ class CreateCostoverheadsTable extends Migration
             $table->string('category');
             $table->integer('amount');
             $table->string('status');
+            $table->string('by');
             $table->timestamps();
         });
     }

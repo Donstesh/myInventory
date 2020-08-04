@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Auth;
 use Illuminate\Http\Request;
 use App\Costoverhead;
 
@@ -43,6 +44,7 @@ class CohController extends Controller
         $cohs->category = $request->input('category');
         $cohs->amount = $request->input('amount');
         $cohs->status = $request->input('status');
+        $cohs->by = Auth::guard('admin')->user()->name;
         $cohs->save(); //persist the data
         return view('admin.coh.new')->with('successMsg','Record Added Successfully');
     }
@@ -86,6 +88,7 @@ class CohController extends Controller
         $cohs->category = $request->input('category');
         $cohs->amount = $request->input('amount');
         $cohs->status = $request->input('status');
+        $cohs->by = Auth::guard('admin')->user()->name;
         $cohs->save($request->all()); //persist the data
         $cohs = Costoverhead::paginate(5);
         return view('admin.coh.costoverhead',['cohs'=>$cohs])->with('successMsg','Record Updated Successfully');

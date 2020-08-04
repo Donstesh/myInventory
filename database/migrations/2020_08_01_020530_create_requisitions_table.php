@@ -21,6 +21,7 @@ class CreateRequisitionsTable extends Migration
             $table->string('requisition_amount');
             $table->string('category');
             $table->string('status');
+            $table->string('by');
             $table->timestamps();
         });
     }

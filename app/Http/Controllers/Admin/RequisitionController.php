@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 use App\Requisition;
 
 class RequisitionController extends Controller
@@ -44,6 +45,7 @@ class RequisitionController extends Controller
         $reqs->requisition_amount = $request->input('requisition_amount');
         $reqs->category = $request->input('category');
         $reqs->status = 'Pending';
+        $reqs->by = Auth::guard('admin')->user()->name;
         $reqs->save(); //persist the data
         $reqs = Requisition::paginate(5); 
         return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Updated Successfully');
@@ -90,6 +92,7 @@ class RequisitionController extends Controller
         $reqs->requisition_amount = $request->input('requisition_amount');
         $reqs->category = $request->input('category');
         $reqs->status = $request->input('status');
+        $reqs->by = Auth::guard('admin')->user()->name;
         $reqs->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
         $reqs = Requisition::paginate(5);

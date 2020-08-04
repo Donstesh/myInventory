@@ -20,6 +20,7 @@ class CreateDailyeportsTable extends Migration
             $table->string('task');
             $table->string('problem_encountered');
             $table->text('report');
+            $table->string('by');
             $table->timestamps();
         });
     }

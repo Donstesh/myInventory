@@ -35,6 +35,7 @@
                           <th>Amount Requisitioned.</th>
                           <th>Category.</th>
                           <th>Status.</th>
+                          <th>Requisitioned By</th>
                           <th colspan = "2">Actions</th>
                         </tr>
                         </thead>
@@ -46,7 +47,8 @@
                               <td>{{ $req->quantity }}</td>
                               <td>{{ $req->requisition_amount }}</td>
                               <td>{{ $req->category }}</td>
-                              <td>{{ $req->status }}</td>
+                              <td id="id1" >{{ $req->status }}</td>
+                              <td>{{ $req->by }}</td>
                               <td><a href="{{route('admin.req.edit',['id'=>$req->id])}}" class = "btn btn-info">Approve</a></td>
                               <td><a href="{{route('admin.req.destroy',['id'=>$req->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>
@@ -60,4 +62,6 @@
     </div>
 
 </div>
+    
+
 @endsection

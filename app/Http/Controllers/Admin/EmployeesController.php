@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 use App\User;
 use Illuminate\Support\Str;
 
@@ -47,6 +48,7 @@ class EmployeesController extends Controller
         $emps->designation = $request->input('designation');
         $emps->salary = $request->input('salary');
         $emps->additional_info = $request->input('additional_info');
+        $emps->by = Auth::guard('admin')->user()->name;
         $emps->save(); //persist the data
         return view('admin.employees.new')->with('successMsg','Employee Added Successfully');
     }
@@ -91,6 +93,7 @@ class EmployeesController extends Controller
         $emps->designation = $request->input('designation');
         $emps->salary = $request->input('salary');
         $emps->additional_info = $request->input('additional_info');
+        $emps->by = Auth::guard('admin')->user()->name;
         $emps->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
         $emps = User::paginate(5);

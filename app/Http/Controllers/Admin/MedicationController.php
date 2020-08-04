@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 use App\Medication;
 
 class MedicationController extends Controller
@@ -43,6 +44,7 @@ class MedicationController extends Controller
         $medics->mode_of_adminstration = $request->input('mode_of_adminstration');
         $medics->period = $request->input('period');
         $medics->remarks = $request->input('remarks');
+        $medics->by = Auth::guard('admin')->user()->name;
         $medics->save(); //persist the data
         return view('admin.medication.new')->with('successMsg','Record Added Successfully');
 
@@ -86,6 +88,7 @@ class MedicationController extends Controller
         $medics->mode_of_adminstration = $request->input('mode_of_adminstration');
         $medics->period = $request->input('period');
         $medics->remarks = $request->input('remarks');
+        $medics->by = Auth::guard('admin')->user()->name;
         $medics->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
         $medics = Medication::paginate(5);

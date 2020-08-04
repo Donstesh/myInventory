@@ -24,6 +24,7 @@ class CreateSharesTable extends Migration
             $table->integer('phone_no');
             $table->string('next_of_kin');
             $table->string('mode_of_payment');
+            $table->string('by');
             $table->timestamps();
         });
     }

@@ -27,6 +27,7 @@
                           <th>Category</th>
                           <th>Amount Spent.</th>
                           <th>Status</th>
+                          <th>Added By</th>
                           <th colspan = "2">Actions</th>
                         </tr>
                         </thead>
@@ -38,6 +39,7 @@
                               <td>{{ $coh->category }}</td>
                               <td>{{ $coh->amount }}</td>
                               <td>{{ $coh->status }}</td>
+                              <td>{{ $coh->by }}</td>
                               <td><a href="{{route('admin.coh.edit',['id'=>$coh->id])}}" class = "btn btn-info">Edit</a></td>
                               <td><a href="{{route('admin.coh.destroy',['id'=>$coh->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>

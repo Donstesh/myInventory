@@ -30,6 +30,7 @@
                           <th>Designation.</th>
                           <th>Salary.</th>
                           <th>Info.</th>
+                          <th>Added By</th>
                           <th colspan = "2">Actions</th>
                         </tr>
                         </thead>
@@ -44,6 +45,7 @@
                               <td>{{ $emp->designation }}</td>
                               <td>{{ $emp->salary }}</td>
                               <td>{{ $emp->additional_info }}</td>
+                              <td>{{ $emp->by }}</td>
                               <td><a href="{{route('admin.employees.edit',['id'=>$emp->id])}}" class = "btn btn-info">Edit</a></td>
                               <td><a href="{{route('admin.employees.destroy',['id'=>$emp->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>

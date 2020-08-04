@@ -20,6 +20,7 @@ class CreateMedicationsTable extends Migration
             $table->string('mode_of_adminstration');
             $table->string('period');
             $table->string('remarks');
+            $table->string('by');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
 use App\Dailyeport;
 
 class DailyreportController extends Controller
@@ -43,6 +44,7 @@ class DailyreportController extends Controller
         $drpt->task = $request->input('task');
         $drpt->problem_encountered = $request->input('problem_encountered');
         $drpt->report = $request->input('report');
+        $drpts->by = Auth::guard('admin')->user()->name;
         $drpt->save(); //persist the data
         return view('admin.dailyreport.new')->with('successMsg','Record Added Successfully');
     }
@@ -85,6 +87,7 @@ class DailyreportController extends Controller
         $drpt->task = $request->input('task');
         $drpt->problem_encountered = $request->input('problem_encountered');
         $drpt->report = $request->input('report');
+        $drpts->by = Auth::guard('admin')->user()->name;
         $drpt->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
         $drpts = Dailyeport::paginate(5);

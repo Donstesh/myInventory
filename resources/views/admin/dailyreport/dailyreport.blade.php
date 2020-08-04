@@ -27,6 +27,7 @@
                           <th>Task</th>
                           <th>Problem Encountered.</th>
                           <th>Remarks.</th>
+                          <th>Added By</th>
                           <th colspan = "2">Actions</th>
                         </tr>
                         </thead>
@@ -38,6 +39,7 @@
                               <td>{{ $drpt->task }}</td>
                               <td>{{ $drpt->problem_encountered }}</td>
                               <td>{{ $drpt->report }}</td>
+                              <td>{{ $drpt->by }}</td>
                               <td><a href="{{route('admin.dailyreport.edit',['id'=>$drpt->id])}}" class = "btn btn-info">Edit</a></td>
                               <td><a href="{{route('admin.dailyreport.destroy',['id'=>$drpt->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>

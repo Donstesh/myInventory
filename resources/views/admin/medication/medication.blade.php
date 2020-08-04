@@ -27,6 +27,7 @@
                           <th>Mode</th>
                           <th>Period.</th>
                           <th>Remarks.</th>
+                          <th>Added By</th>
                           <th colspan = "2">Actions</th>
                         </tr>
                         </thead>
@@ -38,6 +39,7 @@
                               <td>{{ $medic->mode_of_adminstration }}</td>
                               <td>{{ $medic->period }}</td>
                               <td>{{ $medic->remarks }}</td>
+                              <td>{{ $medic->by }}</td>
                               <td><a href="{{route('admin.medication.edit',['id'=>$medic->id])}}" class = "btn btn-info">Edit</a></td>
                               <td><a href="{{route('admin.medication.destroy',['id'=>$medic->id])}}" class = "btn btn-danger">Delete</a></td>
                             </tr>
