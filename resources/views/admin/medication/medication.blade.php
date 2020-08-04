@@ -14,7 +14,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                <a href="{{ url('admin/medication/new') }}" class = "btn btn-success">Add New Admin</a></h1>
+                <a href="{{ url('admin/medication/new') }}" class = "btn btn-success">New Mdication</a></h1>
                 </div>
             </div>
             <hr>
