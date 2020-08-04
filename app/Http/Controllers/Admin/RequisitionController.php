@@ -45,7 +45,8 @@ class RequisitionController extends Controller
         $reqs->category = $request->input('category');
         $reqs->status = 'Pending';
         $reqs->save(); //persist the data
-        return view('admin.req.new')->with('successMsg','Record Added Successfully');
+        $reqs = Requisition::paginate(5);
+        return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Updated Successfully');
     }
   
     /**
