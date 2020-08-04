@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Str;
 
 class EmployeesController extends Controller
 {
@@ -41,7 +42,7 @@ class EmployeesController extends Controller
         $emps->p_photo = $request->input('p_photo');
         $emps->name = $request->input('name');
         $emps->email = $request->input('email');
-        $emps->password = $request->input('password');
+        $emps->password = bcrypt($request->input('password'));
         $emps->id_no = $request->input('id_no');
         $emps->designation = $request->input('designation');
         $emps->salary = $request->input('salary');
