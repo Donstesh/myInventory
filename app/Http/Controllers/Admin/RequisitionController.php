@@ -47,7 +47,7 @@ class RequisitionController extends Controller
         $reqs->save(); //persist the data
         //$reqs = Requisition::paginate(5);
         //return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Updated Successfully');
-        return view('admin.req.requisition')->with('successMsg','Record Added Successfully');
+        return view('admin.req.new')->with('successMsg','Record Added Successfully');
     }
   
     /**
