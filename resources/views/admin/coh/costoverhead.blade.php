@@ -12,6 +12,13 @@
                     <h1 class="page-header">Cost OverHead</h1>
                 </div>
             </div>
+            @if(!empty($successMsg))
+              <div class="alert alert-success"> {{ $successMsg }}</div>
+            @endif
+
+            @if(!empty($errormsg))
+              <div class="alert alert-danger"> {{ $errormsg }}</div>
+            @endif
             <div class="row">
                 <div class="col-lg-12">
                 <a href="{{ url('admin/coh/new') }}" class = "btn btn-success">New CostOverhead</a></h1>
