@@ -26,7 +26,7 @@
             <hr>
             <div class="row">
               <div class="col-sm-8 offset-sm-2">
-              <form method="POST" action="{{ url('admin/saveshareholder') }}" >
+              <form method="POST" action="{{ url('admin/share/share') }}" >
                   @csrf  
                   @method('POST')
                   <div class="form-group">
