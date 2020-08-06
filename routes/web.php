@@ -50,7 +50,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/admins/{id}/edit','AdminController@edit')->name('admins.edit');
     Route::get('/admins/{id}/delete','AdminController@destroy')->name('admins.destroy');
     Route::get('newadmin','AdminController@create')->name('newadmin');
-    Route::post('newadmin','AdminController@store')->name('saveadmin');
+    Route::post('/admins/adminstrators','AdminController@store')->name('saveadmin');
     Route::post('/admins/update','AdminController@update')->name('users.update');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Daily Report Routes---------------------------------------
@@ -58,7 +58,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/dailyreport/{id}/edit','DailyreportController@edit')->name('dailyreport.edit');
     Route::get('/dailyreport/{id}/delete','DailyreportController@destroy')->name('dailyreport.destroy');
     Route::get('/dailyreport/new','DailyreportController@create')->name('new');
-    Route::post('savereport','DailyreportController@store')->name('save');
+    Route::post('/dailyreport/dailyreport','DailyreportController@store')->name('save');
     Route::post('updaterpt','DailyreportController@update')->name('admin.updaterpt');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Employees Routes---------------------------------------
@@ -66,7 +66,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/employees/{id}/edit','EmployeesController@edit')->name('employees.edit');
     Route::get('/employees/{id}/delete','EmployeesController@destroy')->name('employees.destroy');
     Route::get('/employees/new','EmployeesController@create')->name('new');
-    Route::post('save','EmployeesController@store')->name('save');
+    Route::post('/employees/employee','EmployeesController@store')->name('save');
     Route::post('updateemp','EmployeesController@update')->name('employees.update');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Medication Routes---------------------------------------
@@ -74,7 +74,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/medication/{id}/edit','MedicationController@edit')->name('medication.edit');
     Route::get('/medication/{id}/delete','MedicationController@destroy')->name('medication.destroy');
     Route::get('/medication/new','MedicationController@create')->name('new');
-    Route::post('new','MedicationController@store')->name('saveadmin');
+    Route::post('/medication/medication','MedicationController@store')->name('saveadmin');
     Route::post('updatemed','MedicationController@update')->name('admin.updatemed');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Share Holders Routes---------------------------------------
@@ -82,7 +82,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/share/{id}/edit','ShareholderController@edit')->name('share.edit');
     Route::get('/share/{id}/delete','ShareholderController@destroy')->name('share.destroy');
     Route::get('/share/new','ShareholderController@create')->name('new');
-    Route::post('saveshareholder','ShareholderController@store')->name('save');
+    Route::post('/share/share','ShareholderController@store')->name('save');
     Route::post('updateshareholder','ShareholderController@update')->name('admin.updateshareholder');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Cost Overhead Routes---------------------------------------
@@ -90,15 +90,15 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/coh/{id}/edit','CohController@edit')->name('coh.edit');
     Route::get('/coh/{id}/delete','CohController@destroy')->name('coh.destroy');
     Route::get('/coh/new','CohController@create')->name('new');
-    Route::post('savecoh','CohController@store')->name('save');
+    Route::post('/coh/costoverhead','CohController@store')->name('save');
     Route::post('updatecoh','CohController@update')->name('admin.updatecoh');
     //---------------------------------------End------------------------------------------------------------
-    //---------------------------------------Cost Overhead Routes---------------------------------------
+    //---------------------------------------Requisition Routes---------------------------------------
     Route::get('/req/requisition','RequisitionController@index')->name('requisition')->middleware('guard.verified:admin,admin.verification.notice');
     Route::get('/req/{id}/edit','RequisitionController@edit')->name('req.edit');
     Route::get('/req/{id}/delete','RequisitionController@destroy')->name('req.destroy');
     Route::get('/req/new','RequisitionController@create')->name('new');
-    Route::post('savereq','RequisitionController@store')->name('savereq');
+    Route::post('/req/requisition','RequisitionController@store')->name('savereq');
     Route::post('update','RequisitionController@update')->name('req.update');
     //---------------------------------------End------------------------------------------------------------
 
