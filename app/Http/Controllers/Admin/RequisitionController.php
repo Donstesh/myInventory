@@ -96,7 +96,7 @@ class RequisitionController extends Controller
         $reqs->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
         $reqs = Requisition::paginate(5);
-        return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Updated Successfully');
+        return redirect()->view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Updated Successfully');
     }
 
     /**
@@ -109,6 +109,6 @@ class RequisitionController extends Controller
     {
         $req = Requisition::findOrFail($id);
         $req->delete();
-        return back();
+        return redirect()->back();
     }
 }

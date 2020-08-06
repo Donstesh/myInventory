@@ -26,7 +26,7 @@
             <hr>
             <div class="row">
               <div class="col-sm-8 offset-sm-2">
-                <form action="{{ url('admin/savereq') }}" method = "post"> 
+                <form action="{{ url('admin/req/requisition') }}" method = "post"> 
                   @csrf  
                   @method('POST')
                   <div class="form-group">
