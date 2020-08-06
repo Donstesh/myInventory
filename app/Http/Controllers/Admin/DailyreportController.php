@@ -46,7 +46,8 @@ class DailyreportController extends Controller
         $drpt->report = $request->input('report');
         $drpt->by = Auth::guard('admin')->user()->name;
         $drpt->save(); //persist the data
-        return view('admin.dailyreport.new')->with('successMsg','Record Added Successfully');
+        $drpts = Dailyeport::paginate(5);
+        return view('admin.dailyreport.dailyreport',['drpts'=>$drpts])->with('successMsg','Record Added Successfully');
     }
 
     /**

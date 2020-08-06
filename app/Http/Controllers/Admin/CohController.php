@@ -46,7 +46,7 @@ class CohController extends Controller
         $cohs->status = $request->input('status');
         $cohs->by = Auth::guard('admin')->user()->name;
         $cohs->save(); //persist the data
-        return view('admin.coh.new')->with('successMsg','Record Added Successfully');
+        return view('admin.coh.costoverhead')->with('successMsg','Record Added Successfully');
     }
 
     /**

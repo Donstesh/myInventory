@@ -46,7 +46,8 @@ class MedicationController extends Controller
         $medics->remarks = $request->input('remarks');
         $medics->by = Auth::guard('admin')->user()->name;
         $medics->save(); //persist the data
-        return view('admin.medication.new')->with('successMsg','Record Added Successfully');
+        $medics = Medication::paginate(5);
+        return view('admin.medication.medication',['medics'=>$medics])->with('successMsg','Record Added Successfully');
 
     }
 

@@ -50,7 +50,8 @@ class ShareholderController extends Controller
         $shares->mode_of_payment = $request->input('mode_of_payment');
         $shares->by = Auth::guard('admin')->user()->name;
         $shares->save(); //persist the data
-        return view('admin.share.new')->with('successMsg','Record Added Successfully');
+        $shares = Shares::paginate(5);
+        return view('admin.share.shares',['shares'=>$shares])->with('successMsg','Record Added Successfully');
     }
 
     /**

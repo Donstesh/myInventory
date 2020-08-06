@@ -48,7 +48,7 @@ class RequisitionController extends Controller
         $reqs->by = Auth::guard('admin')->user()->name;
         $reqs->save(); //persist the data
         $reqs = Requisition::paginate(5); 
-        return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Updated Successfully');
+        return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Added Successfully');
     }
   
     /**
@@ -96,7 +96,7 @@ class RequisitionController extends Controller
         $reqs->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
         $reqs = Requisition::paginate(5);
-        return redirect()->view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Updated Successfully');
+        return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Updated Successfully');
     }
 
     /**

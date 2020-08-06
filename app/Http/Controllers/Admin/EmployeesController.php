@@ -50,7 +50,7 @@ class EmployeesController extends Controller
         $emps->additional_info = $request->input('additional_info');
         $emps->by = Auth::guard('admin')->user()->name;
         $emps->save(); //persist the data
-        return view('admin.employees.new')->with('successMsg','Employee Added Successfully');
+        return view('admin.employees.employee')->with('successMsg','Employee Added Successfully');
     }
     /**
      * Display the specified resource.
@@ -97,7 +97,7 @@ class EmployeesController extends Controller
         $emps->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
         $emps = User::paginate(5);
-        return view('admin.employees.employee',['emps'=>$emps])->with('successMsg','Record Updated Successfully');
+        return view('admin.employees.employee',['emps'=>$emps])->with('successMsg','Record Added Successfully');
     }
 
     /**
