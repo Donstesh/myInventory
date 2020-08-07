@@ -53,7 +53,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $medics->links() }}
+                    {{ $medics->render() }}
             </div>
 
         </div>

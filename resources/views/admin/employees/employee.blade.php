@@ -59,7 +59,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $emps->links() }}
+                    {{ $emps->render() }}
             </div>
 
         </div>

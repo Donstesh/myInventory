@@ -53,7 +53,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $cohs->links() }}
+                    {{ $cohs->render() }}
             </div>
 
         </div>

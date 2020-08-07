@@ -53,7 +53,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $drpts->links() }}
+                    {{ $drpts->render() }}
             </div>
 
         </div>

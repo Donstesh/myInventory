@@ -59,7 +59,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $shares->links() }}
+                    {{ $shares->render() }}
             </div>
 
         </div>
