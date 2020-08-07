@@ -16,7 +16,7 @@ class MedicationController extends Controller
      */
     public function index()
     {
-        $medics = Medication::paginate(5);
+        $medics = Medication::get();
         return view('admin.medication.medication',['medics'=>$medics]);
     }
 
@@ -46,7 +46,7 @@ class MedicationController extends Controller
         $medics->remarks = $request->input('remarks');
         $medics->by = Auth::guard('admin')->user()->name;
         $medics->save(); //persist the data
-        $medics = Medication::paginate(5);
+        $medics = Medication::get();
         return view('admin.medication.medication',['medics'=>$medics])->with('successMsg','Record Added Successfully');
 
     }
@@ -92,7 +92,7 @@ class MedicationController extends Controller
         $medics->by = Auth::guard('admin')->user()->name;
         $medics->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
-        $medics = Medication::paginate(5);
+        $medics = Medication::get();
         return view('admin.medication.medication',['medics'=>$medics])->with('successMsg','Record Updated Successfully');
     }
 

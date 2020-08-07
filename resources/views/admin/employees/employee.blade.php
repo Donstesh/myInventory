@@ -59,7 +59,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $emps->render() }}
             </div>
 
         </div>

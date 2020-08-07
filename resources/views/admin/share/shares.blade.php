@@ -59,7 +59,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $shares->render() }}
             </div>
 
         </div>

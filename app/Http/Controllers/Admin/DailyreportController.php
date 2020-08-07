@@ -16,7 +16,7 @@ class DailyreportController extends Controller
      */
     public function index()
     {
-        $drpts = Dailyeport::paginate(5);
+        $drpts = Dailyeport::get();
         return view('admin.dailyreport.dailyreport',['drpts'=>$drpts]);
     }
 
@@ -46,7 +46,7 @@ class DailyreportController extends Controller
         $drpt->report = $request->input('report');
         $drpt->by = Auth::guard('admin')->user()->name;
         $drpt->save(); //persist the data
-        $drpts = Dailyeport::paginate(5);
+        $drpts = Dailyeport::get();
         return view('admin.dailyreport.dailyreport',['drpts'=>$drpts])->with('successMsg','Record Added Successfully');
     }
 
@@ -91,7 +91,7 @@ class DailyreportController extends Controller
         $drpt->by = Auth::guard('admin')->user()->name;
         $drpt->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
-        $drpts = Dailyeport::paginate(5);
+        $drpts = Dailyeport::get();
         return view('admin.dailyreport.dailyreport',['drpts'=>$drpts])->with('successMsg','Record Updated Successfully');
     }
 

@@ -17,7 +17,7 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $emps = User::paginate(5);
+        $emps = User::get();
         return view('admin.employees.employee',['emps'=>$emps]);
     }
 
@@ -96,7 +96,7 @@ class EmployeesController extends Controller
         $emps->by = Auth::guard('admin')->user()->name;
         $emps->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
-        $emps = User::paginate(5);
+        $emps = User::get();
         return view('admin.employees.employee',['emps'=>$emps])->with('successMsg','Record Added Successfully');
     }
 

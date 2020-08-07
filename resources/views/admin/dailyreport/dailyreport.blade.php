@@ -53,7 +53,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $drpts->render() }}
             </div>
 
         </div>

@@ -53,7 +53,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $cohs->render() }}
             </div>
 
         </div>

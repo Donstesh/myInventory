@@ -16,7 +16,7 @@ class RequisitionController extends Controller
      */
     public function index()
     {
-        $reqs = Requisition::paginate(5);
+        $reqs = Requisition::get();
         return view('admin.req.requisition',['reqs'=>$reqs]);
     }
 
@@ -47,7 +47,7 @@ class RequisitionController extends Controller
         $reqs->status = 'Pending';
         $reqs->by = Auth::guard('admin')->user()->name;
         $reqs->save(); //persist the data
-        $reqs = Requisition::paginate(5); 
+        $reqs = Requisition::get(); 
         return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Added Successfully');
     }
   
@@ -95,7 +95,7 @@ class RequisitionController extends Controller
         $reqs->by = Auth::guard('admin')->user()->name;
         $reqs->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
-        $reqs = Requisition::paginate(5);
+        $reqs = Requisition::get();
         return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Updated Successfully');
     }
 

@@ -53,7 +53,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $medics->render() }}
             </div>
 
         </div>

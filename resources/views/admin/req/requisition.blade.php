@@ -55,7 +55,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $reqs->render() }}
             </div>
 
         </div>
