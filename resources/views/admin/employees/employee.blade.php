@@ -43,7 +43,7 @@
                         </thead>
                         <tbody>
                         @foreach($emps as $emp)
-                            <tr class = "text-center">
+                            <tr class = "text-left">
                               <td>{{ $emp->id }}</td>
                               <td>{{ $emp->p_photo }}</td>
                               <td>{{ $emp->name }}</td>

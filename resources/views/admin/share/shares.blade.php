@@ -43,7 +43,7 @@
                         </thead>
                         <tbody>
                         @foreach($shares as $share)
-                            <tr class = "text-center">
+                            <tr class = "text-left">
                               <td>{{ $share->date_joined }}</td>
                               <td>{{ $share->name }}</td>
                               <td>{{ $share->detail }}</td>

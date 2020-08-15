@@ -40,7 +40,7 @@
                         </thead>
                         <tbody>
                         @foreach($medics as $medic)
-                            <tr class = "text-center">
+                            <tr class = "text-left">
                               <td>{{ $medic->date }}</td>
                               <td>{{ $medic->vaccine }}</td>
                               <td>{{ $medic->mode_of_adminstration }}</td>

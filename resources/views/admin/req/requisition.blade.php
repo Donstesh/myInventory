@@ -41,7 +41,7 @@
                         </thead>
                         <tbody>
                         @foreach($reqs as $req)
-                            <tr class = "text-center">
+                            <tr class = "text-left">
                               <td>{{ $req->date }}</td>
                               <td>{{ $req->detail }}</td>
                               <td>{{ $req->quantity }}</td>

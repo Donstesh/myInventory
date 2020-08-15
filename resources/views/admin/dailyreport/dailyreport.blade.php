@@ -40,7 +40,7 @@
                         </thead>
                         <tbody>
                         @foreach($drpts as $drpt)
-                            <tr class = "text-center">
+                            <tr class = "text-left">
                               <td>{{ $drpt->date }}</td>
                               <td>{{ $drpt->time }}</td>
                               <td>{{ $drpt->task }}</td>

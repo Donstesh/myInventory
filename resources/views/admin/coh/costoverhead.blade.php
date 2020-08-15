@@ -40,7 +40,7 @@
                         </thead>
                         <tbody>
                         @foreach($cohs as $coh)
-                            <tr class = "text-center">
+                            <tr class = "text-left">
                               <td>{{ $coh->date }}</td>
                               <td>{{ $coh->service }}</td>
                               <td>{{ $coh->category }}</td>

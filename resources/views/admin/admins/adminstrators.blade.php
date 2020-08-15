@@ -32,7 +32,7 @@
                         </thead>
                         <tbody>
                         @foreach($admins as $admin)
-                            <tr class = "text-center">
+                            <tr class = "text-left">
                               <td>{{ $admin->name }}</td>
                               <td>{{ $admin->email }}</td>
                               <td>{{ $admin->created_at }}</td>
