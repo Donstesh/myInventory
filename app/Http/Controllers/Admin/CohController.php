@@ -16,8 +16,10 @@ class CohController extends Controller
      */
     public function index()
     {
-        $cohs = Costoverhead::paginate(5);
-        return view('admin.coh.costoverhead',['cohs'=>$cohs]);
+        $cohs = Costoverhead::get();
+        $totalcoh = Costoverhead::sum('amount');
+        return view('admin.coh.costoverhead',['cohs'=>$cohs,
+                                              'totalcoh'=>$totalcoh]);
     }
 
     /**
@@ -47,7 +49,9 @@ class CohController extends Controller
         $cohs->by = Auth::guard('admin')->user()->name;
         $cohs->save(); //persist the data
         $cohs = Costoverhead::get();
-        return view('admin.coh.costoverhead')->with('successMsg','Record Added Successfully');
+        $totalcoh = Costoverhead::sum('amount');
+        return view('admin.coh.costoverhead',['cohs'=>$cohs,
+                                              'totalcoh'=>$totalcoh])->with('successMsg','Record Added Successfully');
     }
 
     /**
@@ -92,7 +96,9 @@ class CohController extends Controller
         $cohs->by = Auth::guard('admin')->user()->name;
         $cohs->save($request->all()); //persist the data
         $cohs = Costoverhead::get();
-        return view('admin.coh.costoverhead',['cohs'=>$cohs])->with('successMsg','Record Updated Successfully');
+        $totalcoh = Costoverhead::sum('amount');
+        return view('admin.coh.costoverhead',['cohs'=>$cohs,
+                                              'totalcoh'=>$totalcoh])->with('successMsg','Record Updated Successfully');
     }
 
     /**

@@ -44,7 +44,7 @@
                               <td>{{ $coh->date }}</td>
                               <td>{{ $coh->service }}</td>
                               <td>{{ $coh->category }}</td>
-                              <td>{{ $coh->amount }}</td>
+                              <td class="text-right" >{{ $coh->amount }}</td>
                               <td>{{ $coh->status }}</td>
                               <td>{{ $coh->by }}</td>
                               <td><a href="{{route('admin.coh.edit',['id'=>$coh->id])}}" class = "btn btn-info">Edit</a></td>
@@ -53,7 +53,7 @@
                         @endforeach
                         </tbody>
                         <th scope="row">Total amount</th>
-                        <td class="text-right" colspan="3" ></td>
+                        <td class="text-right" colspan="3" >{{ $totalcoh }}</td>
                     </table>
             </div>
 
