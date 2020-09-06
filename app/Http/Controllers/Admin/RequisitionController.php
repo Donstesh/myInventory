@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
+use DB;
 use App\Requisition;
 
 class RequisitionController extends Controller
@@ -17,8 +18,7 @@ class RequisitionController extends Controller
     public function index()
     {
         $reqs = Requisition::get();
-        $totalreq = Requisition::sum('requisition_amount');
-        //$totalreq = DB::table('requisitions')->sum('requisition_amount');
+        $totalreq = DB::table('requisitions')->where('status', 'Paid')->get()->sum('requisition_amount');
         return view('admin.req.requisition',['reqs'=>$reqs,
                                              'totalreq'=>$totalreq]);
     }
@@ -51,7 +51,7 @@ class RequisitionController extends Controller
         $reqs->by = Auth::guard('admin')->user()->name;
         $reqs->save(); //persist the data
         $reqs = Requisition::get(); 
-        $totalreq = Requisition::sum('requisition_amount');
+        $totalreq = DB::table('requisitions')->where('status', 'Paid')->get()->sum('requisition_amount');
         return view('admin.req.requisition',['reqs'=>$reqs,
                                              'totalreq'=>$totalreq])->with('successMsg','Record Added Successfully');
     }
@@ -101,7 +101,7 @@ class RequisitionController extends Controller
         $reqs->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
         $reqs = Requisition::get();
-        $totalreq = Requisition::sum('requisition_amount');
+        $totalreq = DB::table('requisitions')->where('status', 'Paid')->get()->sum('requisition_amount');
         return view('admin.req.requisition',['reqs'=>$reqs,
                                              'totalreq'=>$totalreq])->with('successMsg','Record Updated Successfully');
     }

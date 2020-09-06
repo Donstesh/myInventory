@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Auth;
+use DB;
 use Illuminate\Http\Request;
 use App\Costoverhead;
 
@@ -17,7 +18,7 @@ class CohController extends Controller
     public function index()
     {
         $cohs = Costoverhead::get();
-        $totalcoh = Costoverhead::sum('amount');
+        $totalcoh = DB::table('costoverheads')->where('status', 'Paid')->get()->sum('amount');
         return view('admin.coh.costoverhead',['cohs'=>$cohs,
                                               'totalcoh'=>$totalcoh]);
     }
@@ -49,7 +50,7 @@ class CohController extends Controller
         $cohs->by = Auth::guard('admin')->user()->name;
         $cohs->save(); //persist the data
         $cohs = Costoverhead::get();
-        $totalcoh = Costoverhead::sum('amount');
+        $totalcoh = DB::table('costoverheads')->where('status', 'Paid')->get()->sum('amount');
         return view('admin.coh.costoverhead',['cohs'=>$cohs,
                                               'totalcoh'=>$totalcoh])->with('successMsg','Record Added Successfully');
     }
@@ -96,7 +97,7 @@ class CohController extends Controller
         $cohs->by = Auth::guard('admin')->user()->name;
         $cohs->save($request->all()); //persist the data
         $cohs = Costoverhead::get();
-        $totalcoh = Costoverhead::sum('amount');
+        $totalcoh = DB::table('costoverheads')->where('status', 'Paid')->get()->sum('amount');
         return view('admin.coh.costoverhead',['cohs'=>$cohs,
                                               'totalcoh'=>$totalcoh])->with('successMsg','Record Updated Successfully');
     }
