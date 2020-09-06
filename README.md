@@ -1,5 +1,5 @@
 dont foregt to star before cloning this repo kind request
-
+```
 <script>
         function loadColor() {
         var status = document.getElementById('id1');
@@ -11,3 +11,4 @@ dont foregt to star before cloning this repo kind request
         console.log(status);
         }
     </script>
+```
