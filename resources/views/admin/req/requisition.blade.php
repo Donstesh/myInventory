@@ -55,7 +55,7 @@
                         @endforeach
                         </tbody>
                         <th scope="row">Total amount</th>
-                        <td class="text-right" colspan="3" >{{ $totals }}</td>
+                        <td class="text-right" colspan="3" >{{ $totalreq }}</td>
                     </table>
             </div>
 
