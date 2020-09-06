@@ -51,7 +51,9 @@ class RequisitionController extends Controller
         $reqs->by = Auth::guard('admin')->user()->name;
         $reqs->save(); //persist the data
         $reqs = Requisition::get(); 
-        return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Added Successfully');
+        $totals = Requisition::sum('requisition_amount');
+        return view('admin.req.requisition',['reqs'=>$reqs,
+                                             'totals'=>$totals])->with('successMsg','Record Added Successfully');
     }
   
     /**
@@ -99,7 +101,9 @@ class RequisitionController extends Controller
         $reqs->save($request->all()); //persist the data
         //return back()->with('successMsg','Record Added Successfully');
         $reqs = Requisition::get();
-        return view('admin.req.requisition',['reqs'=>$reqs])->with('successMsg','Record Updated Successfully');
+        $totals = Requisition::sum('requisition_amount');
+        return view('admin.req.requisition',['reqs'=>$reqs,
+                                             'totals'=>$totals])->with('successMsg','Record Updated Successfully');
     }
 
     /**
