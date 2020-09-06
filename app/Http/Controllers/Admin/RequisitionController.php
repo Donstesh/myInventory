@@ -17,7 +17,10 @@ class RequisitionController extends Controller
     public function index()
     {
         $reqs = Requisition::get();
-        return view('admin.req.requisition',['reqs'=>$reqs]);
+        $totals = Requisition::sum('requisition_amount');
+        //$totals = DB::table('requisitions')->sum('requisition_amount');
+        return view('admin.req.requisition',['reqs'=>$reqs,
+                                             'totals'=>$totals]);
     }
 
     /**

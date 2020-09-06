@@ -32,7 +32,7 @@
                           <th>Requisition Date</th>
                           <th>Detail</th>
                           <th>Quantity</th>
-                          <th>Amount Requisitioned.</th>
+                          <th>Amount Rqsnd.</th>
                           <th>Category.</th>
                           <th>Status.</th>
                           <th>Requisitioned By</th>
@@ -45,7 +45,7 @@
                               <td>{{ $req->date }}</td>
                               <td>{{ $req->detail }}</td>
                               <td>{{ $req->quantity }}</td>
-                              <td>{{ $req->requisition_amount }}</td>
+                              <td class="text-right">{{ $req->requisition_amount }}</td>
                               <td>{{ $req->category }}</td>
                               <td id="id1" >{{ $req->status }}</td>
                               <td>{{ $req->by }}</td>
@@ -54,6 +54,8 @@
                             </tr>
                         @endforeach
                         </tbody>
+                        <th scope="row">Total amount</th>
+                        <td class="text-right" colspan="3" >{{ $totals }}</td>
                     </table>
             </div>
 
