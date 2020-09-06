@@ -52,6 +52,8 @@
                             </tr>
                         @endforeach
                         </tbody>
+                        <th scope="row">Total amount</th>
+                        <td class="text-right" colspan="3" ></td>
                     </table>
             </div>
 
