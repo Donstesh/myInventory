@@ -44,6 +44,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     });
 
     Route::get('/dashboard','HomeController@index')->name('home')->middleware('guard.verified:admin,admin.verification.notice');
+    //Route::get('/dashboard','HomeController@home')->name('home')->middleware('guard.verified:admin,admin.verification.notice');
 
     //---------------------------------------Admins Management Routes---------------------------------------
     Route::get('/admins/adminstrators','AdminController@index')->name('adminstrators')->middleware('guard.verified:admin,admin.verification.notice');
@@ -102,7 +103,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::post('update','RequisitionController@update')->name('req.update');
     //---------------------------------------End------------------------------------------------------------
     //---------------------------------------Requisition Routes---------------------------------------
-    Route::get('/expenditure/expenditure','ExpenditureController@index')->name('expenditure')->middleware('guard.verified:admin,admin.verification.notice');
+    Route::get('/expenditure/expenditure','HomeController@expenditure')->name('expenditure')->middleware('guard.verified:admin,admin.verification.notice');
     //---------------------------------------End------------------------------------------------------------
 
 });

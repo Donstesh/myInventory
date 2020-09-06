@@ -26,12 +26,28 @@ class HomeController extends Controller
         $this->middleware('auth:admin');
     }
 
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function expenditure()
+    {
+        $totalreq = DB::table('requisitions')->where('status', 'Paid')->get()->sum('requisition_amount');
+        $totalcoh = DB::table('costoverheads')->where('status', 'Paid')->get()->sum('amount');
+        $totalexpenditure = ($totalcoh + $totalreq);
+        return view('admin.expenditure.expenditure',['totalreq'=>$totalreq,
+                                                     'totalcoh'=>$totalcoh,
+                                                     'totalexpenditure'=>$totalexpenditure]);
+    }
     /**
      * Show Admin Dashboard.
      * 
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
         $employees = User::count();
         $admins = Admin::count();
         $drpt = Dailyeport::count();
@@ -39,14 +55,19 @@ class HomeController extends Controller
         $shares = Shares::count();
         $cohs = Costoverhead::count();
         $reqs = Requisition::count();
-        return view('admin.home', ['employees' => $employees,
+        $totalreq = DB::table('requisitions')->where('status', 'Paid')->get()->sum('requisition_amount');
+        $totalcoh = DB::table('costoverheads')->where('status', 'Paid')->get()->sum('amount');
+        $totalexpenditure = ($totalcoh + $totalreq);
+        return view('admin.home',['totalreq'=>$totalreq,
+                                                     'totalcoh'=>$totalcoh,
+                                                     'totalexpenditure'=>$totalexpenditure,
+                                                     'employees' => $employees,
                                     'admins' => $admins,
                                     'drpt' => $drpt,
                                     'medics' => $medics,
                                     'shares' => $shares,
                                     'cohs' => $cohs,
                                     'reqs' => $reqs,]);
-        
     }
 }
 
