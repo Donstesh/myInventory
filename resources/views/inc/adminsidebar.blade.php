@@ -98,7 +98,7 @@
                                 <a href="#"><i class="fas fa-file-invoice-dollar"></i> Expenditure<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="login.html"><i class="fas fa-print"></i>Expenditure Report</a>
+                                        <a href="{{ url('admin/expenditure/expenditure') }}"><i class="fas fa-print"></i>Expenditure Report</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->

@@ -101,6 +101,9 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::post('/req/requisition','RequisitionController@store')->name('savereq');
     Route::post('update','RequisitionController@update')->name('req.update');
     //---------------------------------------End------------------------------------------------------------
+    //---------------------------------------Requisition Routes---------------------------------------
+    Route::get('/expenditure/expenditure','ExpenditureController@index')->name('expenditure')->middleware('guard.verified:admin,admin.verification.notice');
+    //---------------------------------------End------------------------------------------------------------
 
 });
 
