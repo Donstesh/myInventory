@@ -44,7 +44,6 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $admins->links() }}
             </div>
 
         </div>
