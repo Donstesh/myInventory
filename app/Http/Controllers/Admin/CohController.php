@@ -46,6 +46,7 @@ class CohController extends Controller
         $cohs->status = $request->input('status');
         $cohs->by = Auth::guard('admin')->user()->name;
         $cohs->save(); //persist the data
+        $cohs = Costoverhead::get();
         return view('admin.coh.costoverhead')->with('successMsg','Record Added Successfully');
     }
 
@@ -90,7 +91,7 @@ class CohController extends Controller
         $cohs->status = $request->input('status');
         $cohs->by = Auth::guard('admin')->user()->name;
         $cohs->save($request->all()); //persist the data
-        $cohs = Costoverhead::paginate(5);
+        $cohs = Costoverhead::get();
         return view('admin.coh.costoverhead',['cohs'=>$cohs])->with('successMsg','Record Updated Successfully');
     }
 
