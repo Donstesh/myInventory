@@ -29,7 +29,6 @@
                     <table class="table table-sm table-bordered table-hover table-striped">
                         <thead>
                         <tr>
-                          <th>Emp ID</th>
                           <th>User</th>
                           <th>Name</th>
                           <th>Email</th>
@@ -44,7 +43,6 @@
                         <tbody>
                         @foreach($emps as $emp)
                             <tr class = "text-left">
-                              <td>{{ $emp->id }}</td>
                               <td>{{ $emp->p_photo }}</td>
                               <td>{{ $emp->name }}</td>
                               <td>{{ $emp->email }}</td>

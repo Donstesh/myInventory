@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Auth;
 use App\User;
+use DB;
 use Illuminate\Support\Str;
 
+ 
 class EmployeesController extends Controller
 {
     /**
@@ -39,6 +42,7 @@ class EmployeesController extends Controller
      */
     public function store(Request $request)
     {
+    
         $emps = new User();
         $emps->p_photo = $request->input('p_photo');
         $emps->name = $request->input('name');
@@ -50,7 +54,9 @@ class EmployeesController extends Controller
         $emps->additional_info = $request->input('additional_info');
         $emps->by = Auth::guard('admin')->user()->name;
         $emps->save(); //persist the data
-        return view('admin.employees.employee')->with('successMsg','Employee Added Successfully');
+        $emps = User::get();
+        return view('admin.employees.employee',['emps'=>$emps])->with('successMsg','Employee Added Successfully');
+        
     }
     /**
      * Display the specified resource.
