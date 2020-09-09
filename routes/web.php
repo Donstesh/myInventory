@@ -12,6 +12,33 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//---------------------------------------Daily Report Routes---------------------------------------
+Route::get('/dailyreport/dailyreport','DailyreportController@index')->name('dailyreport');
+Route::get('/dailyreport/{id}/edit','DailyreportController@edit')->name('dailyreport.edit');
+Route::get('/dailyreport/{id}/delete','DailyreportController@destroy')->name('dailyreport.destroy');
+Route::get('/dailyreport/new','DailyreportController@create')->name('new');
+Route::post('/dailyreport/dailyreport','DailyreportController@store')->name('save');
+Route::post('updaterpt','DailyreportController@update')->name('admin.updaterpt');
+//---------------------------------------End------------------------------------------------------------
+
+//---------------------------------------Medication Routes---------------------------------------
+Route::get('/medication/medication','MedicationController@index')->name('medication');
+Route::get('/medication/{id}/edit','MedicationController@edit')->name('medication.edit');
+Route::get('/medication/{id}/delete','MedicationController@destroy')->name('medication.destroy');
+Route::get('/medication/new','MedicationController@create')->name('new');
+Route::post('/medication/medication','MedicationController@store')->name('saveadmin');
+Route::post('updatemed','MedicationController@update')->name('admin.updatemed');
+//---------------------------------------End------------------------------------------------------------
+
+//---------------------------------------Requisition Routes--------------------------------------------------------------------
+Route::get('/req/requisition','RequisitionController@index')->name('requisition');
+Route::get('/req/{id}/edit','RequisitionController@edit')->name('req.edit');
+Route::get('/req/{id}/delete','RequisitionController@destroy')->name('req.destroy');
+Route::get('/req/new','RequisitionController@create')->name('new');
+Route::post('/req/requisition','RequisitionController@store')->name('savereq');
+Route::post('update','RequisitionController@update')->name('req.update');
+//---------------------------------------End------------------------------------------------------------------------------------
+
 /* --------------------- Common/User Routes END -------------------------------- */
 
 /* ----------------------- Admin Routes START -------------------------------- */
@@ -93,14 +120,14 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::post('/coh/costoverhead','CohController@store')->name('save');
     Route::post('updatecoh','CohController@update')->name('admin.updatecoh');
     //---------------------------------------End------------------------------------------------------------
-    //---------------------------------------Requisition Routes---------------------------------------
+    //---------------------------------------Requisition Routes--------------------------------------------------------------------
     Route::get('/req/requisition','RequisitionController@index')->name('requisition')->middleware('guard.verified:admin,admin.verification.notice');
     Route::get('/req/{id}/edit','RequisitionController@edit')->name('req.edit');
     Route::get('/req/{id}/delete','RequisitionController@destroy')->name('req.destroy');
     Route::get('/req/new','RequisitionController@create')->name('new');
     Route::post('/req/requisition','RequisitionController@store')->name('savereq');
     Route::post('update','RequisitionController@update')->name('req.update');
-    //---------------------------------------End------------------------------------------------------------
+    //---------------------------------------End------------------------------------------------------------------------------------
     //---------------------------------------Requisition Routes---------------------------------------
     Route::get('/expenditure/expenditure','HomeController@expenditure')->name('expenditure')->middleware('guard.verified:admin,admin.verification.notice');
     //---------------------------------------End------------------------------------------------------------
