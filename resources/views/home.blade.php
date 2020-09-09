@@ -26,7 +26,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{ url('admin/dailyreport/dailyreport') }}">
+                                <a href="{{ url('dailyreport/dailyreport') }}">
                                     <div class="panel-footer">
                                         <span class="pull-left">View Details</span>
                                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -49,7 +49,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{ url('admin/medication/medication') }}">
+                                <a href="{{ url('medication/medication') }}">
                                     <div class="panel-footer">
                                         <span class="pull-left">View Details</span>
                                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a href="{{ url('admin/req/requisition') }}">
+                                <a href="{{ url('req/requisition') }}">
                                     <div class="panel-footer">
                                         <span class="pull-left">View Details</span>
                                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
